@@ -1,0 +1,478 @@
+﻿body {
+    padding-top: 50px;
+    /*  padding-bottom: 20px;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.bgr {
+    background-image: url('../Upload/Images/bgr-img.jpg');
+    height: 645px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+
+.plans {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 1140px;
+    padding: 35px 50px;
+    margin-top: 3rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 8px 10px 0px #d8dfeb;
+    box-shadow: 0px 8px 10px 0px #d8dfeb;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+    .plans .plan input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .plans .plan {
+        cursor: pointer;
+        width: 100%;
+    }
+
+        .plans .plan .plan-content {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 30px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: 2px solid #e1e2e7;
+            border-radius: 10px;
+            -webkit-transition: -webkit-box-shadow 0.4s;
+            transition: -webkit-box-shadow 0.4s;
+            -o-transition: box-shadow 0.4s;
+            transition: box-shadow 0.4s;
+            transition: box-shadow 0.4s, -webkit-box-shadow 0.4s;
+            position: relative;
+        }
+
+            .plans .plan .plan-content img {
+                margin-right: 30px;
+                height: 72px;
+            }
+
+        .plans .plan .plan-details span {
+            margin-bottom: 10px;
+            display: block;
+            font-size: 20px;
+            line-height: 24px;
+            color: #252f42;
+        }
+
+.add-message {
+    color: green;
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.container .title {
+    font-size: 23px;
+    font-weight: 500;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    color: #252f42;
+    margin-bottom: 20px;
+    font-family: Satisfy, cursive;
+    margin-left: 20px;
+    color: SandyBrown;
+    text-shadow: 0.02em 0.02em 0 Brown, 0 0 0.5em violet;
+    cursor: default;
+}
+
+.plans .plan .plan-details p {
+    color: #646a79;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.plans .plan .plan-content:hover {
+    -webkit-box-shadow: 0px 3px 5px 0px #e8e8e8;
+    box-shadow: 0px 3px 5px 0px #e8e8e8;
+}
+
+.plans .plan input[type="radio"]:checked + .plan-content:after {
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background: #216fe0;
+    right: 20px;
+    top: 20px;
+    border-radius: 100%;
+    border: 3px solid #fff;
+    -webkit-box-shadow: 0px 0px 0px 2px #0066ff;
+    box-shadow: 0px 0px 0px 2px #0066ff;
+}
+
+.plans .plan input[type="radio"]:checked + .plan-content {
+    border: 2px solid #216ee0;
+    background: #eaf1fe;
+    -webkit-transition: ease-in 0.3s;
+    -o-transition: ease-in 0.3s;
+    transition: ease-in 0.3s;
+}
+
+@media screen and (max-width: 991px) {
+    .plans {
+        margin: 0 20px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        padding: 40px;
+    }
+
+        .plans .plan {
+            width: 100%;
+        }
+
+    .plan.complete-plan {
+        margin-top: 20px;
+    }
+
+    .plans .plan .plan-content .plan-details {
+        width: 70%;
+        display: inline-block;
+    }
+
+    .plans .plan input[type="radio"]:checked + .plan-content:after {
+        top: 45%;
+        -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+        transform: translate(-50%);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .plans .plan .plan-content .plan-details {
+        width: 60%;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .plans .plan .plan-content img {
+        margin-bottom: 20px;
+        height: 56px;
+        -webkit-transition: height 0.4s;
+        -o-transition: height 0.4s;
+        transition: height 0.4s;
+    }
+
+    .plans .plan input[type="radio"]:checked + .plan-content:after {
+        top: 20px;
+        right: 10px;
+    }
+
+    .plans .plan .plan-content .plan-details {
+        width: 100%;
+    }
+
+    .plans .plan .plan-content {
+        padding: 20px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+    }
+}
+
+/* inspiration */
+.inspiration {
+    font-size: 12px;
+    margin-top: 50px;
+    position: absolute;
+    bottom: 10px;
+    font-weight: 300;
+}
+
+    .inspiration a {
+        color: #666;
+    }
+
+@media screen and (max-width: 767px) {
+    /* inspiration */
+    .inspiration {
+        display: none;
+    }
+}
+
+.text-ft {
+    text-align: -webkit-center;
+    margin-top: 10px;
+}
+
+.control-group {
+    margin: 30px 20px;
+    position: relative;
+}
+
+    .control-group input[type="text"] + label {
+        background: #fff;
+        border-left: 5px solid #f0f0f0;
+        color: #8c8c8c;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 700;
+        left: 0;
+        padding: 2px 11px 3px 6px;
+        position: absolute;
+        top: 5px;
+        transition-duration: 500ms;
+        transition-property: background, border-color, color, padding, top, left;
+    }
+
+    .control-group input[type="text"] {
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        border: 5px solid #f0f0f0;
+        background: #fff;
+        border-radius: 0;
+        color: #222;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        outline: none;
+        padding: 29px 12px 1px 12px;
+        transition-duration: 500ms;
+        transition-property: border-color, padding-top, padding-bottom;
+        width: 100%;
+    }
+
+        .control-group input[type="text"]::placeholder {
+            color: #9c9c9c;
+            font-weight: 400;
+        }
+
+        .control-group input[type="text"]:focus {
+            border-color: #2d9ae3;
+            padding-top: 13px;
+            padding-bottom: 16px;
+        }
+
+            .control-group input[type="text"]:focus + label {
+                background: #2d9ae3;
+                border-color: #2d9ae3;
+                color: #fff;
+                top: -21px;
+            }
+
+
+
+.button-71 {
+    background-color: #0078d0;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    outline: 0;
+    padding: 16px 21px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+    .button-71:before {
+        background-color: initial;
+        background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+        border-radius: 20px;
+        content: "";
+        height: 50%;
+        left: 3%;
+        opacity: .5;
+        position: absolute;
+        top: 0;
+        transition: all .3s;
+        width: 95%;
+    }
+
+    .button-71:hover {
+        box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+        transform: scale(1.01);
+    }
+
+@media (min-width: 768px) {
+    .button-71 {
+        padding: 5px 31px;
+    }
+}
+
+.text-st {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:600,700';
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.rwd-table {
+    margin: auto;
+    min-width: 300px;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+    .rwd-table tr:first-child {
+        border-top: none;
+        background: #428bca;
+        color: #fff;
+    }
+
+    .rwd-table tr {
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        background-color: #f5f9fc;
+    }
+
+        .rwd-table tr:nth-child(odd):not(:first-child) {
+            background-color: #ebf3f9;
+        }
+
+    .rwd-table th {
+        display: none;
+    }
+
+    .rwd-table td {
+        display: block;
+    }
+
+        .rwd-table td:first-child {
+            margin-top: .5em;
+        }
+
+        .rwd-table td:last-child {
+            margin-bottom: .5em;
+        }
+
+        .rwd-table td:before {
+            content: attr(data-th) ": ";
+            font-weight: bold;
+            width: 120px;
+            display: inline-block;
+            color: #000;
+        }
+
+    .rwd-table th,
+    .rwd-table td {
+        text-align: left;
+    }
+
+.rwd-table {
+    color: #333;
+    border-radius: .4em;
+    overflow: hidden;
+}
+
+    .rwd-table tr {
+        border-color: #bfbfbf;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+        padding: .5em 1em;
+    }
+
+@media screen and (max-width: 601px) {
+    .rwd-table tr:nth-child(2) {
+        border-top: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .rwd-table tr:hover:not(:first-child) {
+        background-color: #d8e7f3;
+    }
+
+    .rwd-table td:before {
+        display: none;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+        display: table-cell;
+        padding: .25em .5em;
+    }
+
+        .rwd-table th:first-child,
+        .rwd-table td:first-child {
+            padding-left: 0;
+        }
+
+        .rwd-table th:last-child,
+        .rwd-table td:last-child {
+            padding-right: 0;
+        }
+
+    .rwd-table th,
+    .rwd-table td {
+        padding: 1em !important;
+    }
+}
+
+
+
+/* THE END OF THE IMPORTANT STUFF */
+
+/* Basic Styling */
+/*body {
+    background: #4B79A1;
+    background: -webkit-linear-gradient(to left, #4B79A1, #283E51);
+    background: linear-gradient(to left, #4B79A1, #283E51);
+}*/
+
+
+

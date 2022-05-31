@@ -1,0 +1,42 @@
+﻿@model Cargo4You.Models.ServiceBasedOnWeight
+
+
+<h4>Based on wight:</h4>
+
+@using (Html.BeginForm("ServiceBasedOnWeightRow", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="control-group">
+        @Html.EditorFor(model => model.WeightFrom, new { htmlAttributes = new { id = "weightFrom", name = "weightFrom", placeholder = "Enter the weight in kg", type = "text" } })
+        <label for="weightFrom">Weight from</label><br />
+        @Html.ValidationMessageFor(model => model.WeightFrom, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="control-group">
+        @Html.EditorFor(model => model.WeightTo, new { htmlAttributes = new { id = "weightTo", name = "weightTo", placeholder = "Enter the weight in kg", type = "text" } })
+        <label for="weightTo">Weight to</label><br />
+        @Html.ValidationMessageFor(model => model.WeightTo, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="control-group">
+        @Html.EditorFor(model => model.WeightCost, new { htmlAttributes = new { id = "width", name = "width", placeholder = "Enter the price" } })
+        <label for="width">Costs</label><br />
+        @Html.ValidationMessageFor(model => model.WeightCost, "", new { @class = "text-danger" })
+    </div>
+
+    if (TempData["WeightMessage"] != null)
+    {
+        <div class="add-message">
+            @TempData["WeightMessage"]
+        </div>
+    }
+
+    <div class="control-group">
+        <button class="button-71" type="submit" role="button">Add service based on weight</button>
+    </div>
+}
+
+
+
+

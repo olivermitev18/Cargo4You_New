@@ -1,0 +1,92 @@
+﻿@model Cargo4You.Models.Order
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <div class="plans" style="max-width:960px;">
+        <div class="title">Shipping Method</div>
+        <div class="row">
+            <div class="col-xl-6 col-md-6 col-sm-12">
+                @using(Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+                    <div class="control-group">
+                        @Html.EditorFor(model => model.Width, new { htmlAttributes = new { id = "width", name = "width", placeholder = "Enter the width", required = "" } })
+                        <label for="width">Width</label><br />
+                        @Html.ValidationMessageFor(model => model.Width, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="control-group">
+                        @Html.EditorFor(model => model.Height, new { htmlAttributes = new { id = "height", name = "height", placeholder = "Enter the height", required = "" } })
+                        <label for="height">Height</label><br />
+                        @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="control-group">
+                        @Html.EditorFor(model => model.Depth, new { htmlAttributes = new { id = "depth", name = "depth", placeholder = "Enter the depth", required = "" } })
+                        <label for="depth">Depth</label><br />
+                        @Html.ValidationMessageFor(model => model.Depth, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="control-group">
+                        @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { id = "weight", name = "weight", placeholder = "Enter the weight", required = "" } })
+                        <label for="weight">Weight</label><br />
+                        @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
+                    </div>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="control-group">
+                        <button class="button-71" type="submit" role="button">Calculate</button>
+                    </div>
+                }
+            </div>
+            <div class="col-xl-6 col-md-6 col-sm-12">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 col-sm-12">
+                        <label class="plan basic-plan" style="cursor:default">
+                            <div class="plan-content">
+                                <img loading="lazy" src="~/Upload/Images/icon-256x256.png" alt="" />
+                                <div class="plan-details">
+                                    <span>Cargo4You</span>
+                                    <p>
+                                        Any parcel <= 20Kg<br />
+                                        Any parcel <= 2000cm3
+                                    </p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-xl-12 col-md-12 col-sm-12">
+                        <label class="plan complete-plan" style="cursor:default">
+                            <div class="plan-content">
+                                <img loading="lazy" src="~/Upload/Images/fast-1.png" alt="" />
+                                <div class="plan-details">
+                                    <span>ShipFaster</span>
+                                    <p>
+                                        10Kg < Any parcel <= 30Kg<br />
+                                        Any parcel <= 1700cm3
+                                    </p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-xl-12 col-md-12 col-sm-12">
+                        <label class="plan complete-plan" style="cursor: default;">
+                            <div class="plan-content">
+                                <img loading="lazy" src="~/Upload/Images/images.png" alt="" />
+                                <div class="plan-details">
+                                    <span>MaltaShip</span>
+                                    <p>
+                                        Any parcel >= 10Kg<br />
+                                        Any parcel >= 500cm3
+                                    </p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

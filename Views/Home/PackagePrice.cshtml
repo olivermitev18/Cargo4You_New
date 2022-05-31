@@ -1,0 +1,63 @@
+﻿@model Cargo4You.Models.ApplicableCourier
+@{
+    ViewBag.Title = "PackagePrice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PackagePrice</h2>
+
+<div class="container">
+    <div class="plans">
+        <div class="title">Shipping Method</div>
+        <div class="row">
+            <div class="col-xl-12 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xl-8 col-md-8 col-sm-8">
+                        <div class="plan-content">
+                            <img loading="lazy" src="~/Upload/Images/icon-256x256.png" alt="" />
+                            <div class="plan-details">
+                                <span>@Model.ApplicableName</span>
+                                <p>
+                                    <b>Shipping: @Model.ApplicableCost EUR</b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-sm-4">
+                        <div class="text-st">
+                            @*<a onclick="rezult('@item.UserID', '@item.Courier', '@item.Shipping_rez')" id="EviOtkCB@(i)" class="button-71">Order Now</a>*@                                                                                                                                                                                                                                                                                                                                                     @*<button class="button-71" type="submit" role="button">Order Now</button>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { });
+        function rezult(userId, courier, shipping) {
+
+            $.ajax({
+                type: "post",
+                url: "/Home/Orders",
+                data:
+                {
+                    userId: userId,
+                    courier: courier,
+                    shipping: shipping,
+                },
+                success: function (count) {
+                    console.log(count);
+                    window.location.href = "/Home/Orders?userId=" + userId + "&courier=" + courier + "&istorija=" + shipping;
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus); alert("Error: ");
+                }
+            });
+        }
+
+    </script>
+}

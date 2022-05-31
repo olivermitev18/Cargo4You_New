@@ -1,0 +1,39 @@
+﻿@model Cargo4You.Models.ServiceBasedOnDimension
+
+
+<h4>Based on dimensions:</h4>
+
+@using (Html.BeginForm("ServiceBasedOnDimensionsRow", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="control-group">
+        @Html.EditorFor(model => model.DimensionFrom, new { htmlAttributes = new { id = "dimensionfrom", name = "dimensionFrom", placeholder = "Enter the dimensions in cm3", type = "text" } })
+        <label for="dimensionfrom">Dimension from</label><br />
+        @Html.ValidationMessageFor(model => model.DimensionFrom, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="control-group">
+        @Html.EditorFor(model => model.DimensionTo, new { htmlAttributes = new { id = "dimensionto", name = "dimensionTo", placeholder = "Enter the dimensions in cm3", type = "text" } })
+        <label for="dimensionto">Dimension to</label><br />
+        @Html.ValidationMessageFor(model => model.DimensionTo, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="control-group">
+        @Html.EditorFor(model => model.DimensionCost, new { htmlAttributes = new { id = "width", name = "width", placeholder = "Enter the price" } })
+        <label for="width">Costs</label><br />
+        @Html.ValidationMessageFor(model => model.DimensionCost, "", new { @class = "text-danger" })
+    </div>
+
+    if (TempData["DimensionsMessage"] != null)
+    {
+        <div class="add-message">
+            @TempData["DimensionsMessage"]
+        </div>
+    }
+
+    <div class="control-group">
+        <button class="button-71" type="submit" role="button">Add service based on dimension</button>
+    </div>
+}
+
